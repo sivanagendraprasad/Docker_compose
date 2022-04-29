@@ -1,0 +1,17 @@
+version: '2'
+services:
+  python:
+    image: kammana/python-app:7
+    container_name: python
+    ports:
+     - "8080:5000"
+    networks:
+      - javahome-app
+  redis:
+    container_name: redis
+    image: "redis"
+    networks:
+      - javahome-app
+networks:
+  javahome-app:
+    driver: bridge
